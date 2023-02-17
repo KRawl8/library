@@ -36,6 +36,8 @@ body {
     background-color: white;
 }
 
+/* Main ----------------------------------------------------------------- */
+
 .library-section {
     background-color: rgb(224, 224, 224);
     height: 85%; 
@@ -52,7 +54,7 @@ body {
 .book {
     height: 360px;
     width: 250px;
-    background-color: rgb(115, 115, 221);
+    background-color: rgb(221, 115, 44);
     border-radius: 30px;
     border: 5px solid black;
     padding: 30px;
@@ -66,9 +68,10 @@ body {
     height: 100%;
 }
 
-/* Popup Form -------------------------------------------- */
+/* Popup Form ------------------------------------------------------------- */
 
 .popup-form {
+    display: none;
     position: absolute;
     top: 20%;
     left: 40%;
@@ -116,9 +119,13 @@ form :nth-child(4) label {
 form input {
     height: 50px;
     width: 80%;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
     border-radius: 10px;
     font-size: 20px;
+}
+
+form input[type="checkbox"] {
+    accent-color: #abec31;
 }
 
 form div button {

@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <h1>Library</h1>
-        <button>Add Book +</button>
+        <button class="add-book">Add Book +</button>
     </div>
     <div class="library-section">
         <div class="book-section">
@@ -42,23 +42,23 @@
                 <form action="" method="post">
                     <div>
                         <label for="title"></label> <!-- The for and id must be the same -->
-                        <input type="text" id="title" name="title" placeholder="Title">
+                        <input type="text" id="title" name="title" placeholder="Title" class="title">
                     </div>
                     <div>
                         <label for="author"></label>
-                        <input type="text" id="author" name="author" placeholder="Author">
+                        <input type="text" id="author" name="author" placeholder="Author" class="author">
                     </div>
                     <div>
                         <label for="pages"></label>
-                        <input type="number" id="pages" name="pages" placeholder="Pages">
+                        <input type="number" id="pages" name="pages" placeholder="Pages" class="pages">
                     </div>
                     <div>
                         <label for="read">Have you read the book?</label>
-                        <input type="checkbox" id="read" name="read">
+                        <input type="checkbox" id="read" name="read" class="read">
                     </div>
                     
                     <div>
-                        <button type="submit">Add book</button>
+                        <button type="submit" class="enter-book">Add book</button>
                     </div>
                 </form>
             </fieldset>
