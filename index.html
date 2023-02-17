@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <title>Library</title>
 </head>
 <body>
@@ -13,10 +14,55 @@
         <button>Add Book +</button>
     </div>
     <div class="library-section">
-        
+        <div class="book-section">
+            <div class="book">
+                <div class="book-content">
+                    <p>Title</p>
+                    <p>Author</p>
+                    <p>Pages</p>
+                    <p>Read</p>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="book">
+                <div class="book-content">
+                    <p>Title</p>
+                    <p>Author</p>
+                    <p>Pages</p>
+                    <p>Read</p>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="popup-form">
-
+        <div class="form-content">
+            <fieldset>
+                <legend>Add your book details</legend>
+                <form action="" method="post">
+                    <div>
+                        <label for="title"></label> <!-- The for and id must be the same -->
+                        <input type="text" id="title" name="title" placeholder="Title">
+                    </div>
+                    <div>
+                        <label for="author"></label>
+                        <input type="text" id="author" name="author" placeholder="Author">
+                    </div>
+                    <div>
+                        <label for="pages"></label>
+                        <input type="number" id="pages" name="pages" placeholder="Pages">
+                    </div>
+                    <div>
+                        <label for="read">Have you read the book?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+                    
+                    <div>
+                        <button type="submit">Add book</button>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
     </div>
     
 </body>

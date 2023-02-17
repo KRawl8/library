@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,16 +10,20 @@ body {
 }
 
 .header {
-    background-color: rgb(248, 208, 75);
+    background-color: rgb(241, 241, 241);
     display: grid;
     grid-template-columns: 2fr 3fr 1fr 3fr 2fr;
     align-items: center;
     height: 15%;
+    position: relative;
+    box-shadow: 0px -20px 20px 10px black;
+    z-index: 1;
 }
 
 .header h1 {
     grid-area: 1 / 2 / 1 / 3;
     font-size: 80px;
+    color: rgb(82, 81, 81);
 }
 
 .header button {
@@ -27,9 +32,99 @@ body {
     width: 70%; 
     font-size: 30px;
     border-radius: 60px;
+    border: 2px solid gray;
+    background-color: white;
 }
 
 .library-section {
-    background-color: rgb(101, 169, 247);
+    background-color: rgb(224, 224, 224);
     height: 85%; 
+}
+
+.book-section {
+    padding: 150px;
+    height: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.book {
+    height: 360px;
+    width: 250px;
+    background-color: rgb(115, 115, 221);
+    border-radius: 30px;
+    border: 5px solid black;
+    padding: 30px;
+}
+
+.book-content {
+    display: grid;
+    grid-template-rows: repeat(1fr, 5);
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Popup Form -------------------------------------------- */
+
+.popup-form {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    z-index: 2;
+    height: 60vh;
+    width: clamp(300px, 20vw, 20vw);
+    background-color: rgb(67, 139, 211);
+    border: 10px solid black;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.form-content {
+    height: 100%;
+}
+
+fieldset {
+    height: 100%;
+    border: none;
+}
+
+legend {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-rows: repeat(1fr, 5);
+    height: 90%;
+}
+
+form div {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+form :nth-child(4) label {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+form input {
+    height: 50px;
+    width: 80%;
+    padding-left: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+form div button {
+    margin: 20px 0 -20px 0;
+    height: 40px;
+    width: 70%;
+    font-size: 24px;
+    border-radius: 10px;
 }
