@@ -12,7 +12,8 @@ const aGameOfThrones = new Book(
 );
 myLibrary.push(aGameOfThrones);
 
-const addBookButton = document.querySelector(".add-book"); // Identifies "Add Book +" button
+// Identifies "Add Book +" button
+const addBookButton = document.querySelector(".add-book");
 addBookButton.addEventListener("click", () => {
   createNewBook();
 });
@@ -41,22 +42,24 @@ enterBookButton.addEventListener("click", (event) => {
   libraryUpdate();
 });
 
+// The object constructor function
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = () => {
-    return `${title} by ${author}, ${pages} pages.`;
-  };
 }
 
+// Updates the display to show all the books
 const libraryUpdate = () => {
   let bookSection = document.querySelector(".book-section");
+
+  // Clears display to allow for the update
   while (bookSection.firstChild) {
     bookSection.removeChild(bookSection.lastChild);
   }
 
+  // Creates all new elements to populate the card for each book. Then adds them to the HTML
   for (let i = 0; i < myLibrary.length; i++) {
     let card = document.createElement("div");
     card.setAttribute("class", "book");
@@ -67,8 +70,9 @@ const libraryUpdate = () => {
     let author = document.createElement("p");
     author.textContent = myLibrary[i].author;
     let pages = document.createElement("p");
-    pages.textContent = myLibrary[i].pages;
+    pages.textContent = myLibrary[i].pages + " pages";
     let read = document.createElement("button");
+    read.setAttribute("class", "read-button");
     if (myLibrary[i].read === false) {
       read.textContent = "Not Read";
       read.style.backgroundColor = "red";
@@ -85,4 +89,18 @@ const libraryUpdate = () => {
 
     bookSection.appendChild(card);
   }
+
+  // Allow the read buttton to be toggled
+  let readButton = document.querySelectorAll(".read-button");
+  readButton.forEach((readButton) => {
+    readButton.addEventListener("click", () => {
+      if (readButton.textContent === "Read") {
+        readButton.textContent = "Not Read";
+        readButton.style.backgroundColor = "red";
+      } else if (readButton.textContent === "Not Read") {
+        readButton.textContent = "Read";
+        readButton.style.backgroundColor = "green";
+      }
+    });
+  });
 };
