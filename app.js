@@ -1,5 +1,4 @@
 let myLibrary = [];
-// theHobbit, aGameOfThrones
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 myLibrary.push(theHobbit);
@@ -114,6 +113,8 @@ const libraryUpdate = () => {
     });
   });
 
+  // When a remove button is pressed, the id in the dataset should match the
+  // index of the book in myLibrary, so it can be deleted, then updates the library again
   let removeButton = document.querySelectorAll(".remove-button");
   removeButton.forEach((removeButton) => {
     removeButton.addEventListener("click", (e) => {
