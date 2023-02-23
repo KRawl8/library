@@ -40,6 +40,11 @@ enterBookButton.addEventListener("click", (event) => {
   myLibrary.push(newBook);
   popupForm.style.display = "none";
   libraryUpdate();
+
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  read.checked = false;
 });
 
 // The object constructor function
@@ -80,12 +85,17 @@ const libraryUpdate = () => {
       read.textContent = "Read";
       read.style.backgroundColor = "green";
     }
+    let removeBtn = document.createElement("button");
+    removeBtn.setAttribute("class", "remove-button");
+    removeBtn.textContent = "Remove";
+    removeBtn.dataset.id = i;
 
     card.appendChild(cardContent);
     cardContent.appendChild(title);
     cardContent.appendChild(author);
     cardContent.appendChild(pages);
     cardContent.appendChild(read);
+    cardContent.appendChild(removeBtn);
 
     bookSection.appendChild(card);
   }
@@ -103,4 +113,15 @@ const libraryUpdate = () => {
       }
     });
   });
+
+  let removeButton = document.querySelectorAll(".remove-button");
+  removeButton.forEach((removeButton) => {
+    removeButton.addEventListener("click", (e) => {
+      let indexToRemove = e.currentTarget.dataset.id;
+      myLibrary.splice(indexToRemove, indexToRemove + 1);
+      libraryUpdate();
+    });
+  });
 };
+
+libraryUpdate();
