@@ -1,5 +1,15 @@
 let myLibrary = [];
 
+// The object constructor function
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+}
+
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 myLibrary.push(theHobbit);
 
@@ -45,14 +55,6 @@ enterBookButton.addEventListener("click", (event) => {
   pages.value = "";
   read.checked = false;
 });
-
-// The object constructor function
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
 
 // Updates the display to show all the books
 const libraryUpdate = () => {
