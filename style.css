@@ -62,7 +62,6 @@ body {
 
 .book-content {
     display: grid;
-    grid-template-rows: repeat(1fr, 5);
     justify-items: center;
     align-items: center;
     height: 100%;
@@ -115,7 +114,6 @@ legend {
 
 form {
     display: grid;
-    grid-template-rows: repeat(1fr, 5);
     height: 90%;
 }
 

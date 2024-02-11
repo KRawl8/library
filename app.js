@@ -1,37 +1,27 @@
-let myLibrary = [];
+const myLibrary = [];
 
-// The object constructor function
-class Book {
-  constructor(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-  }
+function Book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
-myLibrary.push(theHobbit);
-
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, true);
 const aGameOfThrones = new Book(
-  "A Game of Thrones",
+  "A Game Of Thrones",
   "George.R.R Martin",
   694,
   true
 );
-myLibrary.push(aGameOfThrones);
+myLibrary.push(theHobbit, aGameOfThrones);
 
-// Identifies "Add Book +" button
+// When the "Add Book +" button is pressed open up the form
 const addBookButton = document.querySelector(".add-book");
-addBookButton.addEventListener("click", () => {
-  createNewBook();
-});
-
-// Opens up the pop-up form to enter in new book details
 const popupForm = document.querySelector(".popup-form");
-function createNewBook() {
+addBookButton.addEventListener("click", () => {
   popupForm.style.display = "block";
-}
+});
 
 // When the add book button is pressed all of the forms inputs gets passed to the object constructor
 const enterBookButton = document.querySelector(".enter-book");
